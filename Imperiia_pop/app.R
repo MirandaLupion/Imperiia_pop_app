@@ -30,7 +30,7 @@ ui <- fluidPage(
       sidebarPanel(
         h3("Select the inputs"),
         selectInput(inputId = "y", #internal label 
-                    label = "Population to graph", #label that user sees
+                    label = "Select population to graph", #label that user sees
                     choices = c("Total population" = "TotalPop", 
                                 "Male population" = "Male", 
                                 "Female population" = "Female",
@@ -39,7 +39,7 @@ ui <- fluidPage(
                     selected = "TotalPop"),
         
         selectizeInput(inputId = "d", #internal label
-                       label = "Select district", #label that user sees
+                       label = "Select districts to include", #label that user sees
                        choices = c(pop$District), #choose from this list 
                        multiple = TRUE, # can choose multiple 
                        options = list(maxItems = 5))), #can choose up to five
