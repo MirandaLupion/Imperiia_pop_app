@@ -11,7 +11,6 @@ pop$Male <- str_replace_all(pop$Male, pattern = fixed(","), replacement = "")
 pop$Female <- str_replace_all(pop$Female, pattern = fixed(","), replacement = "") 
 pop$City <- str_replace_all(pop$City, pattern = fixed(","), replacement = "") 
 pop$Rural <- str_replace_all(pop$Rural, pattern = fixed(","), replacement = "") 
-pop$District <- str_remove_all(pop$District, pattern = "[^[:alnum:]]") 
 pop$TotalPop <- as.numeric(pop$TotalPop)
 pop$Male <- as.numeric(pop$Male)
 pop$Female <- as.numeric(pop$Female)
@@ -31,7 +30,7 @@ ui <- fluidPage(
       sidebarPanel(
         h3("Select the inputs"),
         selectInput(inputId = "y", #internal label 
-                    label = "Population to map", #label that user sees
+                    label = "Population to graph", #label that user sees
                     choices = c("Total population" = "TotalPop", 
                                 "Male population" = "Male", 
                                 "Female population" = "Female",
